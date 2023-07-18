@@ -1,8 +1,8 @@
-const assert = require('chai').assert;
-const io = require('socket.io-client');
-const serverUrl = 'http://localhost:3000';
+const assert = require("chai").assert;
+const io = require("socket.io-client");
+const serverUrl = "http://localhost:3001";
 
-describe('Socket.io test', function() {
+describe("Socket.io test", function() {
   let client1, client2;
 
   before(function(done) {
@@ -19,10 +19,10 @@ describe('Socket.io test', function() {
     done();
   });
 
-  it('Should be able to send and receive messages', function(done) {
-    client1.emit('message', 'Hello, world!');
-    client2.on('message', function(msg) {
-      assert.equal(msg, 'Hello, world!');
+  it("Should be able to send and receive messages", function(done) {
+    client1.emit("message", "Hello, world!");
+    client2.on("message", function(msg) {
+      assert.equal(msg, "Hello, world!");
       done();
     });
   });
